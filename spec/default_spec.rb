@@ -5,7 +5,11 @@ require 'spec_helper'
 describe 'mysql::default' do
   let(:chef_run) { ChefSpec::Runner.new.converge(described_recipe) }
 
-  it 'does something' do
-    pending 'Replace this with meaningful tests'
+  it 'installs a mysql-client package' do
+    expect(chef_run).to install_package('mysql-client')
+  end
+
+  it 'installs a libmysqlclient-dev package' do
+    expect(chef_run).to install_package('libmysqlclient-dev')
   end
 end
