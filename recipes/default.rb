@@ -18,10 +18,10 @@
 # limitations under the License.
 #
 
-apt_repository "percona" do
+apt_repository 'percona' do
   uri node['percona']['apt_uri']
   distribution node['lsb']['codename']
-  components [ "main" ]
+  components ['main']
   keyserver node['percona']['apt_keyserver']
   key node['percona']['apt_key']
   action :add
@@ -29,4 +29,12 @@ end
 
 node['mysql']['client']['packages'].each do |name|
   package name
+end
+
+node['percona']['server']['packages'].each do |name|
+  package name
+end
+
+service 'mysql' do
+  action [:enable, :start]
 end

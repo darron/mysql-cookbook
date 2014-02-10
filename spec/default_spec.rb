@@ -5,11 +5,15 @@ require 'spec_helper'
 describe 'mysql::default' do
   let(:chef_run) { ChefSpec::Runner.new.converge(described_recipe) }
 
-  it 'installs a mysql-client package' do
-    expect(chef_run).to install_package('mysql-client')
+  it 'installs a percona-server-client package' do
+    expect(chef_run).to install_package('percona-server-client')
   end
 
   it 'installs a libmysqlclient-dev package' do
     expect(chef_run).to install_package('libmysqlclient-dev')
+  end
+
+  it 'installs a percona-server-server-5.5 package' do
+    expect(chef_run).to install_package('percona-server-server-5.5')
   end
 end
