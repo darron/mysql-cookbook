@@ -13,7 +13,7 @@ describe 'mysql::default' do
     expect(chef_run).to install_package('libmysqlclient-dev')
   end
 
-  it 'installs a percona-server-server-5.5 package' do
-    expect(chef_run).to install_package('percona-server-server-5.5')
+  it 'installs a percona-server-server-5.6 package' do
+    expect(chef_run).to install_package('percona-server-server-5.6')
   end
 end

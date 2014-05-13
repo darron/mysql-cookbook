@@ -23,4 +23,4 @@ default['percona']['apt_keyserver'] = 'keys.gnupg.net'
 default['percona']['apt_key'] = 'CD2EFD2A'
 
 default['mysql']['client']['packages'] = %w[percona-server-client libmysqlclient-dev]
-default['percona']['server']['packages'] = %w[percona-server-server-5.5]
+default['percona']['server']['packages'] = %w[percona-server-server-5.6]
